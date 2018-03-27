@@ -1,0 +1,44 @@
+﻿[
+  {
+    "outputFileName": "wwwroot/lib/bootstrap.css",
+    "inputFiles": [
+      "node_modules/bootstrap/dist/css/bootstrap.css"
+    ],
+    "minify": { "enabled": false }
+  },
+  {
+    "outputFileName": "wwwroot/lib/jquery.js",
+    "inputFiles": [
+      "node_modules/jquery/dist/jquery.js"
+    ],
+    "minify": { "enabled": false }
+  },
+  {
+    "outputFileName": "wwwroot/lib/bootstrap.js",
+    "inputFiles": [
+      "node_modules/bootstrap/dist/js/bootstrap.js"
+    ],
+    "minify": { "enabled": false }
+  },
+  {
+    "outputFileName": "wwwroot/lib/bootstrap.min.css",
+    "inputFiles": [
+      "node_modules/bootstrap/dist/css/bootstrap.min.css"
+    ],
+    "minify": { "enabled": false }
+  },
+  {
+    "outputFileName": "wwwroot/lib/bootstrap.min.js",
+    "inputFiles": [
+      "node_modules/bootstrap/dist/js/bootstrap.min.js"
+    ],
+    "minify": { "enabled": false }
+  },
+  {
+    "outputFileName": "wwwroot/lib/jquery.min.js",
+    "inputFiles": [
+      "node_modules/jquery/dist/jquery.min.js"
+    ],
+    "minify": { "enabled": false }
+  }
+]
