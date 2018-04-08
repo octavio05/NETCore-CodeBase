@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NetCore_ProjectBase.Class;
 using NetCore_ProjectBase.Interfaces;
+using CoreConnection;
 
 namespace NetCore_ProjectBase
 {
@@ -31,6 +32,9 @@ namespace NetCore_ProjectBase
                     ConnectionString = Configuration["Data:ConnectionString"].ToString()
                 };
             });
+
+            // Configure CorePostgreSql
+            services.AddSingleton<ICorePostgreSql>(connection => new CorePostgreSql(Configuration["Data:ConnectionString"].ToString()));
 
             // Configure BusinessLogic
             services.AddSingleton<IBusinessLogic, BusinessLogic>();

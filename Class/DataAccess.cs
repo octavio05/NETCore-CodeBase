@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Options;
 using NetCore_ProjectBase.Interfaces;
+using CoreConnection;
 
 namespace NetCore_ProjectBase.Class
 {
@@ -7,12 +8,14 @@ namespace NetCore_ProjectBase.Class
     {
         #region Private variables
         private readonly AppSettings _settings;
+        private readonly ICorePostgreSql _connection;
         #endregion
 
         #region Constructor
-        public DataAccess(IOptions<AppSettings> settings)
+        public DataAccess(IOptions<AppSettings> settings, ICorePostgreSql connection)
         {
             _settings = settings.Value;
+            _connection = connection;
         }
         #endregion
 
