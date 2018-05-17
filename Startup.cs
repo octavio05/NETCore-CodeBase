@@ -1,17 +1,21 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using CoreConnection;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using NetCore_ProjectBase.Class;
 using NetCore_ProjectBase.Interfaces;
-using CoreConnection;
+using NLog.Extensions.Logging;
+using System.IO;
 
 namespace NetCore_ProjectBase
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, ILoggerFactory loggerFactory)
         {
+            loggerFactory.ConfigureNLog(string.Concat(Directory.GetCurrentDirectory(), "/NLog.config"));
             Configuration = configuration;
         }
 
@@ -41,6 +45,9 @@ namespace NetCore_ProjectBase
 
             // Configure DataAccess
             services.AddSingleton<IDataAccess, DataAccess>();
+
+            // Configure NLog
+            services.AddSingleton<ILoggerManager, LoggerManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

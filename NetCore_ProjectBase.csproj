@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <UserSecretsId>efb467b1-93ae-4bab-ac91-5ac2e8110d52</UserSecretsId>
+    <RuntimeFrameworkVersion>2.0.6</RuntimeFrameworkVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,15 +14,23 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BuildBundlerMinifier" Version="2.6.362" />
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
+    <PackageReference Include="BuildBundlerMinifier" Version="2.7.385" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.4" />
+    <PackageReference Include="NLog.Extensions.Logging" Version="1.0.2" />
+    <PackageReference Include="Npgsql" Version="3.2.7" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="CoreConnection">
       <HintPath>bin\Release\netcoreapp2.0\CoreConnection.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
